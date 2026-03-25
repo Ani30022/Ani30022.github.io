@@ -33,7 +33,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animated background */
 .bg-animation {
   position: fixed;
   top: 0;
@@ -100,7 +99,6 @@ html {
   66% { transform: translate(-50px, 50px) scale(0.9); }
 }
 
-/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -168,7 +166,6 @@ nav.scrolled {
   width: 100%;
 }
 
-/* Header */
 header {
   height: 100vh;
   display: flex;
@@ -297,17 +294,10 @@ header h1 {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Sections */
 section {
   padding: 120px 10%;
   max-width: 1400px;
@@ -340,7 +330,6 @@ h2 {
   letter-spacing: -1px;
 }
 
-/* About */
 .about-content {
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(20px);
@@ -371,7 +360,6 @@ h2 {
   z-index: 1;
 }
 
-/* Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -450,7 +438,6 @@ h2 {
   transform: translateX(5px);
 }
 
-/* Projects */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -539,7 +526,138 @@ h2 {
   font-weight: 700;
 }
 
-/* Education */
+/* Certifications */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.cert-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 35px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cert-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.cert-card:hover:before {
+  transform: scaleX(1);
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+}
+
+.cert-issuer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.cert-issuer.anthropic {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--primary);
+}
+
+.cert-issuer.infosys {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--accent);
+}
+
+.cert-issuer.saylor {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+.cert-issuer.ibm {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.cert-issuer.cipher {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.cert-issuer.ebox {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+}
+
+.cert-issuer.spoken {
+  background: rgba(236, 72, 153, 0.1);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  color: #f472b6;
+}
+
+.cert-card h3 {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cert-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cert-date {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.cert-link {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s;
+}
+
+.cert-link:hover {
+  gap: 8px;
+}
+
 .education-content {
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(20px);
@@ -596,7 +714,6 @@ h2 {
   font-weight: 600;
 }
 
-/* Contact */
 .contact-content {
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(20px);
@@ -638,13 +755,13 @@ h2 {
   color: #cbd5e1;
   transition: color 0.3s;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .contact-item a:hover {
   color: var(--primary);
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 50px;
@@ -654,50 +771,18 @@ footer {
   z-index: 1;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 48px;
-  }
-  
-  .subtitle {
-    font-size: 20px;
-  }
-  
-  h2 {
-    font-size: 36px;
-  }
-  
-  section {
-    padding: 80px 5%;
-  }
-  
-  nav {
-    padding: 15px 5%;
-  }
-  
-  .nav-links {
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    font-size: 14px;
-  }
-  
-  .about-content, .education-content, .contact-content {
-    padding: 40px 30px;
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-  }
+  header h1 { font-size: 48px; }
+  .subtitle { font-size: 20px; }
+  h2 { font-size: 36px; }
+  section { padding: 80px 5%; }
+  nav { padding: 15px 5%; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 14px; }
+  .about-content, .education-content, .contact-content { padding: 40px 30px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; }
 }
-
-/* Generate stars */
 </style>
 </head>
 <body>
@@ -715,6 +800,7 @@ footer {
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
@@ -805,7 +891,6 @@ footer {
         <li>Secure authentication for personalized experience</li>
       </ul>
     </div>
-
     <div class="project-card">
       <div class="project-number">02</div>
       <h3>Stock Prediction System</h3>
@@ -817,7 +902,6 @@ footer {
         <li>Data-driven analytics for investment decisions</li>
       </ul>
     </div>
-
     <div class="project-card">
       <div class="project-number">03</div>
       <h3>Admission Management System</h3>
@@ -829,7 +913,6 @@ footer {
         <li>Enhanced stakeholder collaboration features</li>
       </ul>
     </div>
-
     <div class="project-card">
       <div class="project-number">04</div>
       <h3>Online Crime Reporting System</h3>
@@ -841,6 +924,126 @@ footer {
         <li>Transparent communication via notifications</li>
       </ul>
     </div>
+
+    <div class="project-card">
+      <div class="project-number">05</div>
+      <h3>File Organizer Desktop App</h3>
+      <p><strong>Stack:</strong> Python 3.11, Tkinter, os & shutil, threading</p>
+      <ul>
+        <li>Auto-sorts files into Images, Videos, Documents, Audio, Code, Archives</li>
+        <li>Live preview before organizing — see where each file will go</li>
+        <li>Undo last action and real-time activity log</li>
+        <li>Multi-threaded — UI stays responsive during large folder operations</li>
+        <li>Handles duplicate filenames automatically</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">06</div>
+      <h3>Personal Finance Tracker</h3>
+      <p><strong>Stack:</strong> Python 3.11, Tkinter, SQLite3</p>
+      <ul>
+        <li>Track income & expenses across 9 expense and 5 income categories</li>
+        <li>Real-time pie chart showing expense breakdown via Tkinter Canvas</li>
+        <li>Budget limits per category with automatic overspend alerts</li>
+        <li>Color-coded transaction history and persistent SQLite storage</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="section-label">Credentials</div>
+  <h2>Certifications</h2>
+  <div class="certifications-grid">
+
+    <div class="cert-card">
+      <div class="cert-issuer anthropic">🤖 Anthropic</div>
+      <h3>Claude with the Anthropic API</h3>
+      <div class="cert-meta">
+        <span class="cert-date">March 18, 2026</span>
+        <a href="https://verify.skilljar.com/c/nz29gsifuugy" target="_blank" class="cert-link">Verify →</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer anthropic">🤖 Anthropic</div>
+      <h3>Claude Code in Action</h3>
+      <div class="cert-meta">
+        <span class="cert-date">March 13, 2026</span>
+        <a href="https://verify.skilljar.com/c/uvr2fvismemf" target="_blank" class="cert-link">Verify →</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer anthropic">🤖 Anthropic</div>
+      <h3>Claude 101</h3>
+      <div class="cert-meta">
+        <span class="cert-date">2026</span>
+        <span class="cert-date">Anthropic / Skilljar</span>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer infosys">🎓 Infosys Springboard</div>
+      <h3>Introduction to Data Science</h3>
+      <div class="cert-meta">
+        <span class="cert-date">March 24, 2026</span>
+        <span class="cert-date">Infosys Springboard</span>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer infosys">🎓 Infosys Springboard</div>
+      <h3>Introduction to Natural Language Processing</h3>
+      <div class="cert-meta">
+        <span class="cert-date">March 25, 2026</span>
+        <span class="cert-date">Infosys Springboard</span>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer saylor">🏛️ Saylor Academy</div>
+      <h3>CS107: C++ Programming</h3>
+      <div class="cert-meta">
+        <span class="cert-date">July 23, 2025 · Grade: 87.50</span>
+        <a href="https://www.saylor.org/student-grad-certificate/?cid=7163614552AS" target="_blank" class="cert-link">Verify →</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer ibm">🔬 IBM / Cognitive Class</div>
+      <h3>Python 101 for Data Science</h3>
+      <div class="cert-meta">
+        <span class="cert-date">July 31, 2025</span>
+        <a href="https://courses.cognitiveclass.ai/certificates/ad9a599b80a741628ddd37baa52a11bb" target="_blank" class="cert-link">Verify →</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer cipher">⚡ CipherSchools</div>
+      <h3>Full-Stack Development Training</h3>
+      <div class="cert-meta">
+        <span class="cert-date">July 2025 · ID: CSW2025-12647</span>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer ebox">🌐 E-Box / Amphisoft</div>
+      <h3>Build Real World Websites using HTML and CSS</h3>
+      <div class="cert-meta">
+        <span class="cert-date">Jun – Sep 2023</span>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer spoken">🎓 Spoken Tutorial / IIT Bombay</div>
+      <h3>Introduction to HTML</h3>
+      <div class="cert-meta">
+        <span class="cert-date">January 14, 2026 · Code: 9716624</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -866,7 +1069,7 @@ footer {
     <div class="contact-grid">
       <div class="contact-item">
         <h3>📧 Email</h3>
-        <a href="mailto:aniketsharma4226@gmail.com">aniketsharma4226@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#04656a6d6f6170776c6576696530363632446369656d682a676b69"><span class="__cf_email__" data-cfemail="86e7e8efede3f2f5eee7f4ebe7b2b4b4b0c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a>
       </div>
       <div class="contact-item">
         <h3>📱 Phone</h3>
@@ -878,7 +1081,7 @@ footer {
       </div>
       <div class="contact-item">
         <h3>💻 GitHub</h3>
-        <a href="https://github.com/aniket_2003" target="_blank">github.com/aniket_2003</a>
+        <a href="https://github.com/Ani30022" target="_blank">github.com/Ani30022</a>
       </div>
     </div>
   </div>
@@ -888,8 +1091,7 @@ footer {
   <p>© 2026 Aniket Sharma. Designed & Developed with passion.</p>
 </footer>
 
-<script>
-// Navbar scroll effect
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
   if (window.scrollY > 100) {
@@ -899,17 +1101,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Generate stars
 const bgAnimation = document.querySelector('.bg-animation');
 for (let i = 0; i < 100; i++) {
-  const star = document.createElement('div');
-  star.className = 'star';
-  star.style.left = Math.random() * 100 + '%';
-  star.style.top = Math.random() * 100 + '%';
-  star.style.animationDelay = Math.random() * 3 + 's';
-  bgAnimation.appendChild(star);
-}
-</script>
-
-</body>
-</html>
+  const star = document.cr
